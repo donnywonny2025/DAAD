@@ -122,3 +122,53 @@ resetBtn.addEventListener('click', () => {
 // ============================================
 renderTodos();
 renderTasks();
+
+// ============================================
+// Documents & Forms
+// ============================================
+const DOCS = [
+    { icon: '📄', title: 'SOS-257 + SOS-258 Form Package', desc: 'Hearing Request + Substance Use Eval', url: 'https://www.michigan.gov/sos/-/media/Project/Websites/sos/sos/OHAO_Form_Package_SOS_257_258.pdf' },
+    { icon: '🖥', title: 'DAIS — Submit Evidence Online', desc: 'Driver Appeals Integrated System', url: 'https://milogin.michigan.gov/' },
+    { icon: '🆓', title: 'Road to Restoration Clinics', desc: 'Free attorney consult + record review', url: 'https://www.michigan.gov/sos/license-id/road-to-restoration' },
+    { icon: '📑', title: 'All SOS Forms Library', desc: 'Complete Michigan SOS forms catalog', url: 'https://www.michigan.gov/sos/resources/forms' },
+    { icon: '🇺🇸', title: 'NDR/PDPS Self-Request', desc: 'National Driver Register — multi-state check', url: 'https://www.nhtsa.gov/content/ndr' },
+    { icon: '🌴', title: 'Florida Driving Record', desc: 'DHSMV — pull FL record online', url: 'https://www.flhsmv.gov/driver-licenses-id-cards/driving-record-check/' },
+    { icon: '🌵', title: 'Arizona Driving Record', desc: 'MVD — pull AZ record online', url: 'https://azmvdnow.gov/' },
+];
+
+const KB_FILES = [
+    { icon: '📘', title: 'DAAD Complete Process', desc: 'Full hearing process guide', file: '../knowledgebase/DAAD_COMPLETE_PROCESS.md' },
+    { icon: '📕', title: 'Jeff\'s Case Narrative', desc: 'Story, timeline, FL license, strategy', file: '../knowledgebase/JEFF_CASE_NARRATIVE.md' },
+    { icon: '📗', title: 'Record Visibility Reference', desc: 'What shows / what doesn\'t on records', file: '../knowledgebase/RECORD_VISIBILITY_REFERENCE.md' },
+    { icon: '📙', title: 'Interstate Data Systems', desc: 'MI ↔ FL ↔ AZ backend connections', file: '../knowledgebase/INTERSTATE_DATA_SYSTEMS.md' },
+    { icon: '📓', title: 'Legal Research & Case Law', desc: 'Law evolution, hardship, sobriety court', file: '../knowledgebase/LEGAL_RESEARCH_CASELAW.md' },
+    { icon: '📔', title: 'Alternative Pathways', desc: 'Novel strategies, Road to Restoration, Clean Slate', file: '../knowledgebase/ALTERNATIVE_PATHWAYS.md' },
+    { icon: '📒', title: 'DAAD Legal Analysis', desc: 'Expert guide & hearing prep', file: '../knowledgebase/DAAD_LEGAL_ANALYSIS.md' },
+    { icon: '📚', title: 'DAAD Expert Guide', desc: 'Scraped legal research', file: '../knowledgebase/DAAD_EXPERT_GUIDE.md' },
+];
+
+function renderLinkList(items, containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    container.innerHTML = '';
+    items.forEach(item => {
+        const a = document.createElement('a');
+        a.href = item.url || item.file;
+        a.target = '_blank';
+        a.className = 'resource-item';
+        a.innerHTML = `
+            <div class="resource-left">
+                <span class="resource-icon">${item.icon}</span>
+                <div>
+                    <strong>${item.title}</strong>
+                    <span>${item.desc}</span>
+                </div>
+            </div>
+            <span class="resource-phone">→</span>
+        `;
+        container.appendChild(a);
+    });
+}
+
+renderLinkList(DOCS, 'docList');
+renderLinkList(KB_FILES, 'kbList');
