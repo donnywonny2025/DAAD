@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerr v. Michigan SOS — Case Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="topbar">
+        <div class="topbar-left">
+            <img src="logo.png" alt="Kerr Case Logo" class="nav-logo">
+            <div class="nav-title">
+                <span class="nav-name">Jeffery Kerr</span>
+                <span class="nav-case">OHA License Appeal</span>
+            </div>
+        </div>
+        <a href="https://milogin.michigan.gov/" target="_blank" class="nav-link">MI SOS Portal →</a>
+    </nav>
+
+    <div class="page">
+
+        <!-- TO-DO: Immediate Actions -->
+        <section class="section">
+            <div class="section-header">
+                <h2>🔴 To-Do — Immediate</h2>
+            </div>
+            <div class="todo-list" id="todoList"></div>
+        </section>
+
+        <!-- Status Bar -->
+        <section class="status-bar">
+            <div class="status-item">
+                <span class="status-label">Petitioner</span>
+                <span class="status-value">Jeffery Kerr</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Jurisdiction</span>
+                <span class="status-value">Allegan County, MI</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Sobriety Date</span>
+                <span class="status-value accent">[TBD]</span>
+            </div>
+        </section>
+
+        <!-- Required Evidence Checklist -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Required Evidence</h2>
+                <button id="resetBtn" class="reset-btn" title="Reset all">↺</button>
+            </div>
+            <div class="task-list" id="taskList"></div>
+        </section>
+
+        <!-- Resources & Contacts -->
+        <section class="section">
+            <h3 class="sub-header">Resources & Contacts</h3>
+            <div class="resource-list">
+                <a href="mailto:jstewart@arborcircle.org" class="resource-item">
+                    <div class="resource-left">
+                        <span class="resource-icon">✉</span>
+                        <div>
+                            <strong>Jennifer Stewart</strong>
+                            <span>Counselor — Arbor Circle (Allegan)</span>
+                        </div>
+                    </div>
+                    <span class="resource-phone">(269) 673-1896</span>
+                </a>
+                <a href="mailto:cbowers@allegancounty.org" class="resource-item">
+                    <div class="resource-left">
+                        <span class="resource-icon">⚖</span>
+                        <div>
+                            <strong>CallieBea Bowers</strong>
+                            <span>Probation Officer — 57th District Court</span>
+                        </div>
+                    </div>
+                    <span class="resource-phone">(269) 673-0460</span>
+                </a>
+                <a href="https://milogin.michigan.gov/" target="_blank" class="resource-item">
+                    <div class="resource-left">
+                        <span class="resource-icon">🏛</span>
+                        <div>
+                            <strong>MiLogin SOS Portal</strong>
+                            <span>Michigan Certified Driving Record & Forms</span>
+                        </div>
+                    </div>
+                    <span class="resource-phone">→</span>
+                </a>
+                <a href="https://www.michigan.gov/sos" target="_blank" class="resource-item">
+                    <div class="resource-left">
+                        <span class="resource-icon">📋</span>
+                        <div>
+                            <strong>DAIS — Driver Appeals System</strong>
+                            <span>File SOS-257 hearing request online</span>
+                        </div>
+                    </div>
+                    <span class="resource-phone">→</span>
+                </a>
+                <div class="resource-item placeholder">
+                    <div class="resource-left">
+                        <span class="resource-icon">👤</span>
+                        <div>
+                            <strong>[Attorney — TBD]</strong>
+                            <span>Pending selection</span>
+                        </div>
+                    </div>
+                    <span class="resource-phone">—</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Reference -->
+        <section class="section">
+            <h3 class="sub-header">Case Reference</h3>
+            <dl class="info-list">
+                <div class="info-row"><dt>Full Name</dt><dd>Jeffery Kerr</dd></div>
+                <div class="info-row"><dt>Address</dt><dd>1176 E Grey Ct, Wayland MI 49348</dd></div>
+                <div class="info-row"><dt>Phone</dt><dd>(407) 620-3618</dd></div>
+                <div class="info-row"><dt>Email</dt><dd>colour8k@mac.com</dd></div>
+                <div class="info-row"><dt>Probation Case</dt><dd>252875FY</dd></div>
+                <div class="info-row"><dt>Court</dt><dd>57th District — Allegan County</dd></div>
+                <div class="info-row"><dt>D&A Color</dt><dd>BLACK</dd></div>
+                <div class="info-row"><dt>Testing Phone</dt><dd>(269) 550-8609</dd></div>
+            </dl>
+        </section>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
