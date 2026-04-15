@@ -6,142 +6,188 @@
     <title>Kerr v. Michigan SOS — Case Portal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <nav class="topbar">
-        <div class="topbar-left">
-            <img src="logo.png" alt="Kerr Case Logo" class="nav-logo">
-            <div class="nav-title">
-                <span class="nav-name">Jeffery Kerr</span>
-                <span class="nav-case">OHA License Appeal</span>
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header">
+        <div class="header-left">
+            <div class="header-badge">JK</div>
+            <div class="header-text">
+                <h1>Kerr v. Michigan SOS</h1>
+                <span class="header-sub">OHA License Restoration — Pro Se</span>
             </div>
         </div>
-        <a href="https://milogin.michigan.gov/" target="_blank" class="nav-link">MI SOS Portal →</a>
+        <div class="header-right">
+            <div class="progress-ring" id="progressRing">
+                <svg viewBox="0 0 44 44">
+                    <circle cx="22" cy="22" r="18" class="ring-bg"/>
+                    <circle cx="22" cy="22" r="18" class="ring-fill" id="ringFill"/>
+                </svg>
+                <span class="ring-label" id="ringLabel">0/12</span>
+            </div>
+            <a href="https://milogin.michigan.gov/" target="_blank" class="header-btn">MI SOS →</a>
+        </div>
+    </header>
+
+    <!-- ===== STATUS STRIP ===== -->
+    <div class="status-strip">
+        <div class="stat">
+            <span class="stat-label">Petitioner</span>
+            <span class="stat-value">Jeffery Kerr</span>
+        </div>
+        <div class="stat">
+            <span class="stat-label">Court</span>
+            <span class="stat-value">57th District — Allegan Co.</span>
+        </div>
+        <div class="stat">
+            <span class="stat-label">Case</span>
+            <span class="stat-value mono">252875FY</span>
+        </div>
+        <div class="stat">
+            <span class="stat-label">Sobriety Date</span>
+            <span class="stat-value accent">[SET THIS FIRST]</span>
+        </div>
+    </div>
+
+    <!-- ===== TABS ===== -->
+    <nav class="tab-bar" id="tabBar">
+        <button class="tab active" data-tab="roadmap">Roadmap</button>
+        <button class="tab" data-tab="resources">Contacts & Forms</button>
+        <button class="tab" data-tab="research">Research</button>
+        <button class="tab" data-tab="case">Case Info</button>
     </nav>
 
-    <div class="page">
+    <!-- ===== PANELS ===== -->
+    <main class="panels">
 
-        <!-- TO-DO: Immediate Actions -->
-        <section class="section">
-            <div class="section-header">
-                <h2>🔴 To-Do — Immediate</h2>
+        <!-- ROADMAP (the main event) -->
+        <section class="panel active" id="panel-roadmap">
+            <div class="panel-header">
+                <h2>Your Roadmap — Every Step to Get the License Back</h2>
+                <button id="resetBtn" class="pill-btn" title="Reset all">Reset ↺</button>
             </div>
-            <div class="todo-list" id="todoList"></div>
+            <p class="panel-desc">12 steps, 3 phases. Check them off as you go. Each one explains <em>why</em> it matters and <em>how</em> to do it.</p>
+            <div class="roadmap-list" id="roadmapList"></div>
         </section>
 
-        <!-- Status Bar -->
-        <section class="status-bar">
-            <div class="status-item">
-                <span class="status-label">Petitioner</span>
-                <span class="status-value">Jeffery Kerr</span>
+        <!-- RESOURCES -->
+        <section class="panel" id="panel-resources">
+            <div class="panel-header">
+                <h2>Contacts & Documents</h2>
             </div>
-            <div class="status-item">
-                <span class="status-label">Jurisdiction</span>
-                <span class="status-value">Allegan County, MI</span>
-            </div>
-            <div class="status-item">
-                <span class="status-label">Sobriety Date</span>
-                <span class="status-value accent">[TBD]</span>
-            </div>
-        </section>
 
-        <!-- Required Evidence Checklist -->
-        <section class="section">
-            <div class="section-header">
-                <h2>Required Evidence</h2>
-                <button id="resetBtn" class="reset-btn" title="Reset all">↺</button>
-            </div>
-            <div class="task-list" id="taskList"></div>
-        </section>
-
-        <!-- Resources & Contacts -->
-        <section class="section">
-            <h3 class="sub-header">Resources & Contacts</h3>
-            <div class="resource-list">
-                <a href="mailto:jstewart@arborcircle.org" class="resource-item">
-                    <div class="resource-left">
-                        <span class="resource-icon">✉</span>
-                        <div>
-                            <strong>Jennifer Stewart</strong>
-                            <span>Counselor — Arbor Circle (Allegan)</span>
-                        </div>
+            <h3 class="group-label">Key Contacts</h3>
+            <div class="contact-grid">
+                <a href="mailto:jstewart@arborcircle.org" class="contact-card">
+                    <div class="contact-avatar">JS</div>
+                    <div class="contact-info">
+                        <strong>Jennifer Stewart</strong>
+                        <span>Counselor — Arbor Circle (Allegan)</span>
+                        <span class="contact-phone">(269) 673-1896</span>
                     </div>
-                    <span class="resource-phone">(269) 673-1896</span>
                 </a>
-                <a href="mailto:cbowers@allegancounty.org" class="resource-item">
-                    <div class="resource-left">
-                        <span class="resource-icon">⚖</span>
-                        <div>
-                            <strong>CallieBea Bowers</strong>
-                            <span>Probation Officer — 57th District Court</span>
-                        </div>
+                <a href="mailto:cbowers@allegancounty.org" class="contact-card">
+                    <div class="contact-avatar">CB</div>
+                    <div class="contact-info">
+                        <strong>CallieBea Bowers</strong>
+                        <span>Probation — 57th District Court</span>
+                        <span class="contact-phone">(269) 673-0460</span>
                     </div>
-                    <span class="resource-phone">(269) 673-0460</span>
                 </a>
-                <a href="https://milogin.michigan.gov/" target="_blank" class="resource-item">
-                    <div class="resource-left">
-                        <span class="resource-icon">🏛</span>
-                        <div>
-                            <strong>MiLogin SOS Portal</strong>
-                            <span>Michigan Certified Driving Record & Forms</span>
-                        </div>
+                <a href="mailto:MDOS-R2R@Michigan.gov" class="contact-card highlight">
+                    <div class="contact-avatar">R2R</div>
+                    <div class="contact-info">
+                        <strong>Road to Restoration</strong>
+                        <span>Free clinics — Pre-register here</span>
+                        <span class="contact-phone">888-767-6424</span>
                     </div>
-                    <span class="resource-phone">→</span>
                 </a>
-                <a href="https://www.michigan.gov/sos" target="_blank" class="resource-item">
-                    <div class="resource-left">
-                        <span class="resource-icon">📋</span>
-                        <div>
-                            <strong>DAIS — Driver Appeals System</strong>
-                            <span>File SOS-257 hearing request online</span>
-                        </div>
+                <div class="contact-card placeholder">
+                    <div class="contact-avatar">??</div>
+                    <div class="contact-info">
+                        <strong>Attorney — TBD</strong>
+                        <span>Get one at Road to Restoration</span>
+                        <span class="contact-phone">—</span>
                     </div>
-                    <span class="resource-phone">→</span>
-                </a>
-                <div class="resource-item placeholder">
-                    <div class="resource-left">
-                        <span class="resource-icon">👤</span>
-                        <div>
-                            <strong>[Attorney — TBD]</strong>
-                            <span>Pending selection</span>
-                        </div>
-                    </div>
-                    <span class="resource-phone">—</span>
                 </div>
             </div>
+
+            <h3 class="group-label">Upcoming Clinics (Free)</h3>
+            <div class="clinic-list">
+                <div class="clinic-item">
+                    <span class="clinic-date">June 24, 2026</span>
+                    <span class="clinic-loc">Battle Creek</span>
+                    <span class="clinic-dist">~45 min</span>
+                </div>
+                <div class="clinic-item">
+                    <span class="clinic-date">Aug 4, 2026</span>
+                    <span class="clinic-loc">Grand Rapids</span>
+                    <span class="clinic-dist">~30 min</span>
+                </div>
+                <div class="clinic-item">
+                    <span class="clinic-date">Aug 13, 2026</span>
+                    <span class="clinic-loc">Kalamazoo</span>
+                    <span class="clinic-dist">~35 min</span>
+                </div>
+            </div>
+
+            <h3 class="group-label">Forms & Portals</h3>
+            <div class="link-grid" id="docList"></div>
         </section>
 
-        <!-- Documents & Forms -->
-        <section class="section">
-            <h3 class="sub-header">Documents & Forms</h3>
-            <div class="resource-list" id="docList"></div>
+        <!-- RESEARCH / KNOWLEDGEBASE -->
+        <section class="panel" id="panel-research">
+            <div class="panel-header">
+                <h2>Research Knowledgebase</h2>
+            </div>
+            <p class="panel-desc">Everything we've researched about the DAAD process, case law, interstate records, and legal strategies.</p>
+            <div class="kb-grid" id="kbList"></div>
         </section>
 
-        <!-- Knowledgebase -->
-        <section class="section">
-            <h3 class="sub-header">Knowledgebase</h3>
-            <div class="resource-list" id="kbList"></div>
-        </section>
+        <!-- CASE INFO -->
+        <section class="panel" id="panel-case">
+            <div class="panel-header">
+                <h2>Case Reference</h2>
+            </div>
 
-        <!-- Case Reference -->
-        <section class="section">
-            <h3 class="sub-header">Case Reference</h3>
-            <dl class="info-list">
+            <h3 class="group-label">Personal Information</h3>
+            <div class="info-table">
                 <div class="info-row"><dt>Full Name</dt><dd>Jeffery Kerr</dd></div>
                 <div class="info-row"><dt>Address</dt><dd>1176 E Grey Ct, Wayland MI 49348</dd></div>
                 <div class="info-row"><dt>Phone</dt><dd>(407) 620-3618</dd></div>
                 <div class="info-row"><dt>Email</dt><dd>colour8k@mac.com</dd></div>
-                <div class="info-row"><dt>Probation Case</dt><dd>252875FY</dd></div>
+            </div>
+
+            <h3 class="group-label">Case Details</h3>
+            <div class="info-table">
+                <div class="info-row"><dt>Probation Case</dt><dd class="mono">252875FY</dd></div>
                 <div class="info-row"><dt>Court</dt><dd>57th District — Allegan County</dd></div>
-                <div class="info-row"><dt>D&A Color</dt><dd>BLACK</dd></div>
+                <div class="info-row"><dt>D&A Color</dt><dd class="badge-black">BLACK</dd></div>
                 <div class="info-row"><dt>Testing Phone</dt><dd>(269) 550-8609</dd></div>
-            </dl>
+            </div>
+
+            <h3 class="group-label">Key Background</h3>
+            <div class="info-table">
+                <div class="info-row"><dt>Original Charges</dt><dd>2x OUIL (~1999-2000)</dd></div>
+                <div class="info-row"><dt>BAC at Time</dt><dd>Below .10% (then-legal limit)</dd></div>
+                <div class="info-row"><dt>Result</dt><dd>Indefinite revocation</dd></div>
+                <div class="info-row"><dt>States Lived</dt><dd>MI → FL → AZ → MI</dd></div>
+                <div class="info-row"><dt>FL License</dt><dd>Held valid FL DL for years, clean record</dd></div>
+                <div class="info-row"><dt>Additional DUI/OWI Since</dt><dd class="text-green">None — 25+ years clean</dd></div>
+            </div>
+
+            <h3 class="group-label">FL License Strategy (If Asked at Hearing)</h3>
+            <div class="strategy-card">
+                <p><strong>If the hearing officer asks about the Florida license, the answer is simple and honest:</strong></p>
+                <blockquote>"I moved to Florida and applied for a license. Florida issued one. I drove responsibly on it for years. My FL driving record is clean — no incidents, no violations. My focus today is demonstrating that my substance use is under control."</blockquote>
+                <p class="strategy-note">Do NOT over-explain or apologize. Do NOT volunteer details. Redirect to sobriety. The clean FL driving history <em>supports</em> your case — it proves you're a responsible driver.</p>
+            </div>
         </section>
 
-    </div>
+    </main>
 
     <script src="app.js"></script>
 </body>
