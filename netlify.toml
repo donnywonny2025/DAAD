@@ -1,0 +1,37 @@
+[build]
+  # We use the root directory as the base since you want to host multiple things (like /portal, /other-stuff)
+  publish = "."
+
+# SECURITY RULES: 
+# Since this is going on the public internet, we want to strictly block access 
+# to your private case files, scripts, and prompts. Bots scan new domains instantly.
+
+[[redirects]]
+  from = "/knowledgebase/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/directives/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/execution/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/*.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/war_room/*"
+  to = "/404.html"
+  status = 404
+  force = true
